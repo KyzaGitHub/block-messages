@@ -20,7 +20,7 @@ module.exports = class BlockMessages extends Plugin {
 		this.loadStylesheet("style.scss");
 
 		inject("block-messages-button", MiniPopover, "default", (args, res) => {
-			const props = findInReactTree(res, (r) => r && r.message);
+			const props = findInReactTree(res, (r) => r?.message);
 			if (!props) return res;
 
 			res.props.children.unshift(

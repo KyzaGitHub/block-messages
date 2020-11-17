@@ -3,6 +3,6 @@
 	"description": "Allows you to block single messages. Waiting for the staff to delete that hardcore furry scat porn? Quickly block it.",
 	"author": "Куzа#1794",
 	"version": "1.0.0",
-	"license": "None",
+	"license": "MIT",
 	"dependencies": ["0klibrary"]
 }
