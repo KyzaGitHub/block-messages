@@ -15,6 +15,8 @@ const BlockButton = require("./components/BlockButton");
 const { findInReactTree } = require("powercord/util");
 const { inject, uninject } = require("powercord/injector");
 
+const { getMessage } = FindModule.byProps("getMessages");
+
 module.exports = class BlockMessages extends Plugin {
 	async startPlugin() {
 		this.loadStylesheet("style.scss");
@@ -25,7 +27,7 @@ module.exports = class BlockMessages extends Plugin {
 
 			res.props.children.unshift(
 				React.createElement(BlockButton, {
-					message: props.message,
+					message: getMessage(props.message.channel_id, props.message.id),
 				})
 			);
 			return res;

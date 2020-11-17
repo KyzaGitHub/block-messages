@@ -14,7 +14,6 @@ const classes = FindModule.byProps("icon", "isHeader");
 const { Button } = FindModule.byFilter(
 	(m) => m.default.displayName === "MiniPopover"
 );
-const { getMessage } = FindModule.byProps("getMessages");
 const { FontAwesome } = require("powercord/components/Icons");
 
 class BlockButton extends React.Component {
@@ -37,7 +36,7 @@ class BlockButton extends React.Component {
 					<Button
 						className={`block-message-button`}
 						onClick={() => {
-							let message = getMessage(this.props.message.channel_id, this.props.message.id);
+							let message = this.props.message;
 							message.blocked = !message
 								.blocked;
 							ReactTools.updateMessage(message);
