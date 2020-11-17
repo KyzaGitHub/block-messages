@@ -40,7 +40,6 @@ class BlockButton extends React.Component {
 							let message = getMessage(this.props.message.channel_id, this.props.message.id);
 							message.blocked = !message
 								.blocked;
-							console.log(message);
 							ReactTools.updateMessage(message);
 						}}
 						onMouseEnter={onMouseEnter}
